@@ -7,8 +7,7 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import React from "react";
-
+import { makeStyles } from "@material-ui/core/styles";
 const rows = [
   { column1: "Project A", column2: "Project A" },
   { column1: "Project A", column2: "Project A" },
@@ -18,10 +17,21 @@ const rows = [
   { column1: "Project A", column2: "Project A" },
 ];
 
+const useStyles = makeStyles({
+  table: {
+    minWidth: 650,
+    "& td, & th": {
+      border: "none",
+      padding: "2rem",
+    },
+  },
+});
+
 const ProjectsList = () => {
+  const classes = useStyles();
   return (
-    <TableContainer component={Paper}>
-      <Table size="small">
+    <TableContainer component={Paper} sx={{ maxHeight: "400px" }}>
+      <Table size="small" className={classes.table} sx={{ border: "none" }}>
         <TableHead>
           <TableRow>
             <TableCell>Project A</TableCell>
