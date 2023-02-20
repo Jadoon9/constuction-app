@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import { Stack } from "@mui/system";
 import MainLayout from "./components/Common/MainLayout";
 import SkillsCard from "./components/HomePage/SkillsCard";
